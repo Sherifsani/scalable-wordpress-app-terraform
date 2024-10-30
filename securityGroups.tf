@@ -28,6 +28,29 @@ resource "aws_security_group" "ECS_SG" {
   }
 }
 
+resource "aws_security_group" "ALB_SG" {
+  name        = "ALB_SG"
+  description = "Allows HTTP and HTTPS traffic on the ALB"
+  vpc_id      = aws_vpc.wordpress.id
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Open to all traffic on port 80
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "ALB_SG"
+  }
+}
+
 # Allow NFS traffic from ECS_SG to EFS_SG
 resource "aws_security_group_rule" "allow_NFS_from_ECS" {
   type                     = "ingress"
