@@ -5,6 +5,11 @@
 This project demonstrates the automated deployment of a secure WordPress website on AWS using **Terraform** for infrastructure provisioning. The setup includes **Amazon ECS (Elastic Container Service)** with **Fargate** as the launch type, **Amazon RDS** for database management, and **Amazon EFS** for persistent storage. The configuration focuses on security and scalability to ensure the WordPress application runs efficiently and can scale with demand.
 
 ---
+## Architecture Diagram
+
+![Architecture Diagram](diagram.png)
+
+---
 
 ## **Key Features**
 
