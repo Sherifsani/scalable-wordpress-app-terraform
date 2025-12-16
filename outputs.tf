@@ -3,6 +3,7 @@ output "ecr_repository_uri" {
   description = "The URI of the ECR repository"
 }
 
+
 output "rds_instance_endpoint" {
   description = "The endpoint of the RDS instance"
   value       = aws_db_instance.wordpressdb
