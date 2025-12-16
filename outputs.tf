@@ -9,7 +9,6 @@ output "rds_instance_endpoint" {
   sensitive   = true
 }
 
-
 output "alb_url" {
   description = "value of the ALB URL"
   value = aws_lb.wordpress_alb.dns_name
